@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "dipix-no-unko-boinko",
+  "version": "${version}",
+  "name": "no unko boinko owo",
+  "description": "prevents disposal of valuable to the plot items uwu",
+  "authors": [],
+  "contact": {},
+  "license": "GPL-3.0",
+  "icon": "assets/dipix-no-unko-boinko/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "pw.dipix.unkoboinko.client.MainClient"
+      }
+    ],
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "pw.dipix.unkoboinko.UnkoBoinko"
+      }
+    ]
+  },
+  "mixins": [
+    "dipix-no-unko-boinko.mixins.json",
+    {
+      "config": "dipix-no-unko-boinko.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
